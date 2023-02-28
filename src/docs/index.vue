@@ -20,43 +20,30 @@
     & > * {
       vertical-align: top;
     }
-  }
-  .screen-1 {
-    background: #90b34d;
-    font-size: 46px;
-    color: #172136;
-  }
-  .screen-2 {
-    background: #2c2c35;
-    font-size: 70px;
-    color: #f7fcfc;
     & > span{
       display: inline-block;
-      height: 70px;
-      line-height: 70px;
+      height: 1em;
+      line-height: 1em;
     }
-  }
-  .pure-screen {
-    color: #47536b;
-    font-size: 100px
   }
 </style>
 
 <template>
   <div class="pad">
-    <div class="screen screen-1">
+    <div class="screen" style="background: #90b34d; font-size: 46px; color: #172136;">
       <SevenSegmentDisplay value="0123456789" />
     </div>
-    <div class="screen screen-2">
+    <div class="screen" style="background: #2c2c35; font-size: 70px; color: #f7fcfc;">
       <SevenSegmentDisplay :value="hours" />
       <span>∶</span>
       <SevenSegmentDisplay :value="minutes" />
       <span>∶</span>
       <SevenSegmentDisplay :value="seconds" />
     </div>
-    <div class="pure-screen">
+    <div style="color: #47536b; font-size: 100px">
       <SevenSegmentDisplay :value="1024" :disable-select="true" />
     </div>
+    <iframe src="https://github.com/bh-lay/vue3-seven-segment-display/blob/main/README.md" frameborder="0"></iframe>
   </div>
 </template>
 
