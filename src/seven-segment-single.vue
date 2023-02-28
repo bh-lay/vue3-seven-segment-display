@@ -2,12 +2,14 @@
 .seven-segment-display {
   display: inline-block;
   position: relative;
+  line-height: 0;
   span {
     position: absolute;
     width: 100%;
     height: 100%;
     line-height: 1.5em;
     font-size: 1em;
+    text-align: left;
     color: rgba(0,0,0,0);
     overflow: hidden;
   }
@@ -16,7 +18,7 @@
   }
   path{
     fill: currentColor;
-    opacity: .1;
+    opacity: .05;
     transition: .5s ease-out;
   }
   &[data-num="0"] path[n*="0"],

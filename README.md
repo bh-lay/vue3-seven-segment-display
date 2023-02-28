@@ -43,7 +43,7 @@ export default {
 You only need to use CSS to customize, and use `font-size` and `color` as normal text.
 
 ## Props
-| prop | descriptoion | type | default |
+| Prop | Descriptoion | Type | Default |
 | ---- | ---- | ---- | ---- |
 | value | Number displayed on the screen. Must be integer or String in integer form. | String, Number | undefined |
 | disable-select | Forbidden user select behavior. | Boolean | false |

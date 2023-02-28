@@ -1,4 +1,7 @@
 import { createApp } from 'vue'
 import Docs from './index.vue'
+import highlightjsCustom from './highlightjs-custom'
 
-createApp(Docs).mount('#app')
+const app = createApp(Docs)
+app.use(highlightjsCustom)
+app.mount('#app')
