@@ -75,8 +75,8 @@
 import Demo from './demo.vue'
 import { marked } from 'marked'
 
-import readme from '../../README.md?raw'
-
+import readmeText from '../../README.md?raw'
+const readme = readmeText.replace(/\.\/public\//gm, './')
 const html = marked(readme)
 </script>
 

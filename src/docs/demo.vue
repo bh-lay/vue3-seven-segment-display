@@ -39,8 +39,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import SevenSegmentDisplay from '../seven-segment-display.vue'
-
+import { SevenSegmentDisplay } from '../index'
 function leftPad(num: number) {
   return (num < 10 ? '0' : '') + num
 }

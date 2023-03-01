@@ -1,16 +1,16 @@
-(function(){ try {var elementStyle = document.createElement('style'); elementStyle.appendChild(document.createTextNode(".seven-segment-display{display:inline-block;position:relative;line-height:0}.seven-segment-display span{position:absolute;width:100%;height:100%;line-height:1.5em;font-size:1em;text-align:left;color:#0000;overflow:hidden}.seven-segment-display svg{height:1em}.seven-segment-display path{fill:currentColor;opacity:.05;transition:.5s ease-out}.seven-segment-display[data-num=\"0\"] path[n*=\"0\"],.seven-segment-display[data-num=\"1\"] path[n*=\"1\"],.seven-segment-display[data-num=\"2\"] path[n*=\"2\"],.seven-segment-display[data-num=\"3\"] path[n*=\"3\"],.seven-segment-display[data-num=\"4\"] path[n*=\"4\"],.seven-segment-display[data-num=\"5\"] path[n*=\"5\"],.seven-segment-display[data-num=\"6\"] path[n*=\"6\"],.seven-segment-display[data-num=\"7\"] path[n*=\"7\"],.seven-segment-display[data-num=\"8\"] path[n*=\"8\"],.seven-segment-display[data-num=\"9\"] path[n*=\"9\"]{opacity:1}")); document.head.appendChild(elementStyle);} catch(e) {console.error('vite-plugin-css-injected-by-js', e);} })();import { defineComponent as r, ref as p, watch as L, h as a, openBlock as o, createElementBlock as d, Fragment as f, renderList as i, createBlock as v } from "vue";
-const m = "seven-segment-display";
-function y(e) {
+(function(){ try {var elementStyle = document.createElement('style'); elementStyle.appendChild(document.createTextNode(".seven-segment-display{display:inline-block;position:relative;line-height:0}.seven-segment-display span{position:absolute;width:100%;height:100%;line-height:1.5em;font-size:1em;text-align:left;color:#0000;overflow:hidden}.seven-segment-display svg{height:1em}.seven-segment-display path{fill:currentColor;opacity:.05;transition:.5s ease-out}.seven-segment-display[data-num=\"0\"] path[n*=\"0\"],.seven-segment-display[data-num=\"1\"] path[n*=\"1\"],.seven-segment-display[data-num=\"2\"] path[n*=\"2\"],.seven-segment-display[data-num=\"3\"] path[n*=\"3\"],.seven-segment-display[data-num=\"4\"] path[n*=\"4\"],.seven-segment-display[data-num=\"5\"] path[n*=\"5\"],.seven-segment-display[data-num=\"6\"] path[n*=\"6\"],.seven-segment-display[data-num=\"7\"] path[n*=\"7\"],.seven-segment-display[data-num=\"8\"] path[n*=\"8\"],.seven-segment-display[data-num=\"9\"] path[n*=\"9\"]{opacity:1}")); document.head.appendChild(elementStyle);} catch(e) {console.error('vite-plugin-css-injected-by-js', e);} })();import { defineComponent as s, ref as r, watch as p, h as a } from "vue";
+const f = "seven-segment-display";
+function i(e) {
   return typeof e == "string" && (e = parseInt(e, 10)), typeof e == "number" ? (e < 0 || e > 9 ? e = "NaN" : e % 1 !== 0 && (e = Math.floor(e)), e.toString()) : "NaN";
 }
-function S(e) {
+function d(e) {
   if (typeof e == "number" && (e = e.toString()), typeof e == "string")
     e = e.replace(/[^\d]/g, "");
   else
     return ["NaN"];
   return e.split("");
 }
-const _ = r({
+const l = s({
   props: {
     value: {
       type: [String, Number],
@@ -21,12 +21,12 @@ const _ = r({
       default: !1
     }
   },
-  setup(e, l) {
-    const t = p("");
-    return L(
+  setup(e, o) {
+    const t = r("");
+    return p(
       () => e.value,
       function(n) {
-        t.value = y(n || 0);
+        t.value = i(n || 0);
       },
       {
         immediate: !0
@@ -34,7 +34,7 @@ const _ = r({
     ), () => {
       const n = e.disableSelect ? null : a("span", {}, t.value === "NaN" ? "" : t.value);
       return a("div", {
-        class: m,
+        class: f,
         "data-num": t.value
       }, [
         n,
@@ -53,8 +53,7 @@ const _ = r({
     };
   }
 });
-const s = /* @__PURE__ */ r({
-  __name: "seven-segment-display",
+const L = s({
   props: {
     value: {
       type: [String, Number],
@@ -65,27 +64,32 @@ const s = /* @__PURE__ */ r({
       default: !1
     }
   },
-  setup(e) {
-    const l = e, t = p(["0"]);
-    return L(
-      () => l.value,
+  setup(e, o) {
+    const t = r(["0"]);
+    return p(
+      () => e.value,
       function(n) {
-        t.value = S(n);
+        t.value = d(n);
       },
       {
         immediate: !0
       }
-    ), (n, h) => (o(!0), d(f, null, i(t.value, (c, u) => (o(), v(_, {
-      key: u,
-      value: c,
-      "disable-select": e.disableSelect
-    }, null, 8, ["value", "disable-select"]))), 128));
+    ), () => t.value.map((n, c) => a(
+      l,
+      {
+        key: c,
+        value: n,
+        disableSelect: e.disableSelect
+      }
+    ));
   }
-}), Z = Object.assign(s, {
-  install: (e) => {
-    e.component("seven-segment-display", s);
+}), v = L, S = l, m = {
+  install(e, ...o) {
+    console.log("options", o), e.component("SevenSegmentDisplay", L), e.component("SevenSegmentSingle", l);
   }
-});
+};
 export {
-  Z as default
+  v as SevenSegmentDisplay,
+  S as SevenSegmetSingle,
+  m as default
 };

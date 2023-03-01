@@ -58,11 +58,9 @@ export default {
 
     app.directive('highlight', {
       mounted (el: HTMLElement, binding) {
-        console.log('el', el)
         let blocks = el.querySelectorAll('pre code');
         blocks.forEach((block: Element)=>{
           const block2 = block as HTMLElement
-          console.log('block2', block2.innerHTML)
           highlight.highlightBlock(block2)
         })
       },
