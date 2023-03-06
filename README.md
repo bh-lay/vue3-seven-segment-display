@@ -3,7 +3,7 @@ Modern lightweight Vue 3 seven segment display.
 
 [Preview Demo & Docs](https://bh-lay.github.io/vue3-seven-segment-display/index.html)
 
-![screenshot](./public/screenshot.jpeg)
+![screenshot](public/screenshot.jpg)
 
 
 
@@ -22,13 +22,22 @@ yarn add vue3-seven-segment-display
 
 ### Basic Using
 
+```typescript
+import SevenSegmentDisplay from 'vue3-seven-segment-display'
+
+const app = createApp(App)
+app.use(SevenSegmentDisplay as Plugin)
+```
+
+or
+
 ```vue
 <template>
   <seven-segment-display :value="3421" />
 </template>
 
 <script>
-import SevenSegmentDisplay from 'vue3-seven-segment-display'
+import { SevenSegmentDisplay } from 'vue3-seven-segment-display'
 
 export default {
   name: 'App',

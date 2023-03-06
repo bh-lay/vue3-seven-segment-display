@@ -1,9 +1,17 @@
 {
   "name": "vue3-seven-segment-display",
-  "version": "1.0.1",
+  "version": "1.0.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bh-lay/vue3-seven-segment-display.git"
+  },
   "bugs": {
     "url": "https://github.com/bh-lay/vue-tab-router/issues"
   },
+  "keywords": [
+    "seven segment display",
+    "vue3"
+  ],
   "homepage": "https://bh-lay.github.io/vue3-seven-segment-display/",
   "scripts": {
     "dev": "vite",
